@@ -1,0 +1,30 @@
+# Virtual environments
+test_venv/
+venv/
+env/
+
+# Build and distribution
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# PyInstaller
+*.spec
