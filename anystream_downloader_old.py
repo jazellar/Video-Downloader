@@ -75,7 +75,11 @@ def hex_to_rgb(hex_color):
     hex_color = hex_color.lstrip("#")
     return tuple(int(hex_color[i:i+2], 16) for i in (0, 2, 4))
 
-def create_gradient_image(width, height, start_color, end_color):
+def create_gradient_image(width, height, start_color, end_color, radius=18, background="#0f1d3f"):
+    if width <= 0 or height <= 0:
+        raise ValueError("Gradient size must be positive")
+    image = tk.PhotoImage(width=width, height=height)
+    ...
     """Generates original high-quality button gradients"""
     image = tk.PhotoImage(width=width, height=height)
     start_rgb = hex_to_rgb(start_color)
@@ -90,8 +94,8 @@ def create_gradient_image(width, height, start_color, end_color):
     return image
 
 # Asset Paths (Using the names verbatim)
-bg_path = os.path.join(os.path.dirname(__file__), "AnyStream Background_7.png")
-logo_path = os.path.join(os.path.dirname(__file__), "AnyStream Logo_7.png")
+bg_path = os.path.join(os.path.dirname(__file__), "AnyStream Background.png")
+logo_path = os.path.join(os.path.dirname(__file__), "AnyStream Logo.png")
 
 # Set the Window/App Icon
 if os.path.exists(logo_path):
